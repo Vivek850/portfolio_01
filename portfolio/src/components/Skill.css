@@ -1,0 +1,62 @@
+.box1 {
+    @apply bg-gray-800 h-full p-1 relative
+}
+dl{
+    @apply flex  p-2 m-1
+}
+dt{
+    @apply flex h-max w-max border-2 ml-2 items-center justify-center rounded-3xl shadow-2xl shadow-gray-500
+    w-[120px] h-[120px]
+    xs:w-[40px] xs:h-[40px] flex-wrap gap-4
+    smx:w-[40px] smx:h-[40px] flex-wrap
+    sm:w-[80px] sm:h-[80px] flex-col
+    md:w-[80px] md:h-[80px] flex-col
+    lg:w-[80px] lg:h-[80px] flex-col
+    xl:w-[100px] xl:h-[100px] flex-row
+    2xl:w-[120px] 2xl:h-[120px] flex-row
+    3xl:w-[120px] 3xl:h-[120px] flex-row
+    4xl:w-[120px] 4xl:h-[120px]  flex-row
+}
+
+span{
+    @apply border-b-2 border-dashed border-black 
+}
+header{
+    @apply text-center p-4 text-white
+    text-[48px]
+    xs:text-[14px] xs:p-1
+    smx:text-[14px] smx:p-1
+    sm:text-[14px] sm:p-1
+    md:text-[16px] md:p-2
+    lg:text-[16px] lg:p-2
+    xl:text-[26px] xl:p-2
+    2xl:text-[36px] 2xl:p-4
+    3xl:text-[46px] 3xl:p-4
+    4xl:text-[48px] 4xl:p-4 ;
+}
+.Hname{
+    @apply  text-center mt-2 text-white ml-[28px]
+    text-[48px]
+    xs:text-[14px] xs:mt-1
+    smx:text-[14px] smx:mt-1
+    sm:text-[14px] sm:mt-1
+    md:text-[16px] md:mt-2
+    lg:text-[16px] lg:mt-2
+    xl:text-[26px] xl:mt-2
+    2xl:text-[36px] 2xl:mt-2
+    3xl:text-[46px] 3xl:mt-2;
+}
+.Uniq{
+    @apply  text-center  mt-1 text-white ml-[28px] break-words text-ellipsis bg-black
+    h-[120px] w-[220px] text-[38px]
+    xs:w-[80px] xs:h-[40px] text-[14px]
+    smx:w-[80px] smx:h-[40px] text-[14px]
+    sm:w-[160px] sm:h-[80px] text-[14px]
+    md:w-[160px] md:h-[80px] text-[16px]
+    lg:w-[160px] lg:h-[80px] text-[16px]
+    xl:w-[200px] xl:h-[100px] text-[16px]
+    ;
+}
+.skill{
+    @apply border-2 border-black rounded-3xl p-4 m-4 shadow-2xl shadow-gray-500
+}

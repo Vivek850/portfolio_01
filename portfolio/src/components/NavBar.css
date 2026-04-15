@@ -1,0 +1,28 @@
+
+/* navbar */
+.nav {
+    @apply flex justify-between w-screen bg-black/50 fixed z-50 border-8 border-blue-500 h-auto ;
+}
+.nav bl {
+   @apply flex font-bold text-2xl uppercase text-green-700 items-center ml-3 left-20 relative
+;
+}
+.nav ul{
+    @apply m-4 flex  ml-auto border-8 border-green-500 relative
+;
+}
+.nav ul li{
+    @apply pr-4 top-0  block relative
+                text-[20px]
+                sm:text-[12px]
+                 md:text-[12px]
+                 lg:text-[12px]
+                 xl:text-[16px]
+                 2xl:text-[18px] 
+                 3xl:text-[20px]
+                 4xl:text-[22px] ;
+}
+.nav ul li button{
+    @apply hover:underline underline-offset-[12px] hover:decoration-blue-500 text-white
+    hover:transform hover:scale-110;
+}

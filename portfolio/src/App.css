@@ -1,0 +1,28 @@
+#root{
+  width:100%;
+}
+.App{
+  width:100%;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.abc{
+  @apply  justify-center bg-blue-500 block mt-20;
+}
+.bcd{
+  @apply text-4xl text-white font-bold;
+}
+body {
+  overflow-x : hidden;
+}
+/* global.css ya App.css me */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari */
+}

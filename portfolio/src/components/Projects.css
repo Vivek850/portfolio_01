@@ -1,0 +1,42 @@
+.box2{
+    @apply bg-[url('./../public/img/bgpjt.jpg!d')] bg-fixed bg-center  h-max w-full 
+}
+.project{
+    @apply flex text-[48px] text-center p-4 text-white underline-offset-[10px] border-white justify-center items-center;
+}
+.video{
+    @apply object-cover rounded-3xl shadow-2xl shadow-gray-500 pt-4
+    h-[30rem] 
+    xs:w-[5em] xs:h-[4em]
+    smx:w-[8em] smx:h-[5em]
+    sm:w-[12em] sm:h-[8em]
+    md:w-[13em] 
+    lg:w-[15em] 
+    xl:w-[16em] 
+    2xl:w-[19em] 
+    3xl:w-[19em] h-[30rem]; ;  
+
+}
+.Pdata{
+    @apply  mt-1 text-white break-words border-2 border-white rounded-3xl p-4 m-4 shadow-2xl shadow-gray-500 h-max
+    text-[24px]
+    xs:text-[8px] xs:w-[29em] 
+    smx:text-[8px] smx:w-[38em] pl-0 pr-0
+    sm:text-[10px] 
+    md:text-[16px] 
+    lg:text-[18px]
+    xl:text-[20px]
+    2xl:text-[24px]
+    3xl:text-[24px] w-[50em];
+}
+.p_dis{
+    @apply   h-max p-4 m-4
+}
+.Apbx {
+    @apply  flex-col justify-center items-center
+;
+}
+.pbx{
+    @apply flex-row justify-center items-center
+    xs:flex-col rounded-3xl p-4 m-4 border-2 border-white shadow-2xl shadow-gray-500 h-max
+}

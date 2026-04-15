@@ -1,0 +1,57 @@
+.home {
+  @apply flex flex-col justify-between items-center bg-gray-900 w-full m-0
+         h-screen 
+         xs:flex-col  h-full 
+         smx:flex-col  h-full
+         sm:flex-col  h-full            
+         md:flex-row     
+         lg:flex-row       
+         xl:flex-row       
+         2xl:flex-row     
+         3xl:flex-row      
+         4xl:flex-row      
+         5xl:flex-row  ;     
+}
+
+
+.heading {
+  @apply 4xl:text-[8rem] 3xl:text-[7rem] 2xl:text-[6rem] xl:text-[5rem] mt-0 p-0 
+  lg:text-[4rem]  md:text-[3rem] sm:text-[2rem] text-[1.5rem]
+  font-bold
+         bg-[radial-gradient(circle_at_right,_#028D27,_#01270B)] 
+         bg-clip-text text-transparent ;
+}
+
+.content {
+  @apply text-white 4xl:text-4xl 3xl:text-3xl 2xl:text-xl xl:text-lg lg:text-lg md:text-sm sm:text-sm text-xs p-4 rounded-lg mt-5;
+}
+
+.wir-data {
+  @apply left-2 top-[100px]  2xl:w-1/2 xl:w-3/4 mt-[140px] lg:w-3/4 md:w-3/4 sm:w-3/4 w-3/4 p-6 rounded-lg;
+}
+
+.img {
+  @apply w-3/4 lg:w-1/4 md:w-1/4 sm:w-1/6 xl:w-1/4 2xl:w-1/4 3xl:w-1/4 4xl:w-1/4 h-auto
+         [clip-path:circle(39%_at_50%_40%)] relative top-10 md:top-20 right-0 md:right-24; 
+}
+
+.box {
+  @apply border-2;
+}
+
+.btn {
+  @apply bg-green-500 rounded-2xl h-16 w-36 
+         sm:text-xs 
+         md:text-xs 
+         lg:text-sm 
+         xl:text-base 
+         2xl:text-lg 
+         3xl:text-xl 
+         4xl:text-2xl;
+}
+
+
+.btn:hover {
+  @apply bg-[radial-gradient(circle_at_bottom,_#09561E,_#5D8267)] 
+         border-4 border-green-400 text-white;
+}
