@@ -11,7 +11,11 @@ app.use(express.json());
 app.use(cors());
 
 // ✅ MongoDB connect
-mongoose.connect('mongodb://127.0.0.1:27017/portfolioAuth')
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.error("MongoDB connection error:", err));
 
@@ -129,8 +133,10 @@ app.use("/api/home", homeRoutes);
 const footerRoutes = require("./footer");
 app.use("/api/footer", footerRoutes);
 
-
-
-
 // ✅ Start Server
-app.listen(4000, () => console.log("Backend running on port 4000"));
+const PORT = process.env.PORT || 4000;
+
+app.listen(PORT, () => {
+  console.log(`Backend running on port ${PORT}`);
+});
+
