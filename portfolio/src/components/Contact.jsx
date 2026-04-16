@@ -29,7 +29,7 @@ function Contact() {
     <>
       <div className="box3  h-full">
         <div className="relative h-full w-full">
-          <div className="absolute inset-0 bg-[url('../img/contact.jpg')] bg-cover bg-center"></div>
+          <div className="absolute inset-0 bg-[url('/img/contact.jpg')] bg-cover bg-center"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-white via-white to-transparent"></div>
 
           <div className="relative z-10 p-10">
