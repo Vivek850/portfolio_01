@@ -1,10 +1,11 @@
 import { Link, Outlet } from "react-router-dom";
 import { useEffect } from "react";
+const API = import.meta.env.VITE_API_URL;
 
 export default function Admin() {
   useEffect(() => {
     const token = localStorage.getItem("token");
-    fetch("http://localhost:4000/admin", {
+    fetch(`${API}/admin`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())

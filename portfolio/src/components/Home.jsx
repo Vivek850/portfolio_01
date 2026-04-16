@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import './Home.css';
+const API = import.meta.env.VITE_API_URL;
 
 function Home() {
   const [homeData, setHomeData] = useState({
@@ -11,7 +12,7 @@ function Home() {
 
   // ✅ Fetch data from backend
   useEffect(() => {
-    fetch("http://localhost:4000/api/home")
+    fetch(`${API}/api/home`) // API endpoint to fetch home data
       .then(res => res.json())
       .then(data => {
         setHomeData({
@@ -49,7 +50,7 @@ function Home() {
         </div>
         
         <div data-aos="fade-left" data-aos-delay="300" data-aos-duration="1200" className="img">
-          <img src='../../public/img/img.jpeg' alt="image" className='w-full h-full object-cover' />  
+          <img src='../img/img.jpeg' alt="image" className='w-full h-full object-cover' />  
         </div>
       </div>
     </>

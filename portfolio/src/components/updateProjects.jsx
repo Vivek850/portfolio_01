@@ -1,18 +1,19 @@
 import { useState, useEffect } from "react";
+const API = import.meta.env.VITE_API_URL;
 
 export default function UpdateProjects() {
   const [projects, setProjects] = useState([]);
   const [editedFields, setEditedFields] = useState({}); // track edited fields
 
   useEffect(() => {
-    fetch("http://localhost:4000/admin/projects")
+    fetch(`${API}/admin/projects`)
       .then(res => res.json())
       .then(data => setProjects(data));
   }, []);
 
   // ✅ Add new project box
   const addProjectBox = async () => {
-    const res = await fetch("http://localhost:4000/admin/projects", {
+    const res = await fetch(`${API}/admin/projects`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name: "", description: "", videoUrl: "" })
@@ -32,7 +33,7 @@ export default function UpdateProjects() {
     const project = projects.find(p => p._id === id);
     const updated = { ...project, [field]: value };
 
-    const res = await fetch(`http://localhost:4000/admin/projects/${id}`, {
+    const res = await fetch(`${API}/admin/projects/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updated)
@@ -44,7 +45,7 @@ export default function UpdateProjects() {
 
   // ✅ Delete project box
   const deleteProjectBox = async (id) => {
-    await fetch(`http://localhost:4000/admin/projects/${id}`, { method: "DELETE" });
+    await fetch(`${API}/admin/projects/${id}`, { method: "DELETE" });
     setProjects(projects.filter(p => p._id !== id));
   };
 

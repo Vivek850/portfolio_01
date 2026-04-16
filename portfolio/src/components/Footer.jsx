@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import './Home.css';
+const API = import.meta.env.VITE_API_URL;
 
 function Footer() {
   const [contacts, setContacts] = useState([]);
 
   // ✅ Fetch contacts from backend
   useEffect(() => {
-    fetch("http://localhost:4000/api/footer")
+    fetch(`${API}/api/footer`) // API endpoint to fetch footer contacts
       .then(res => res.json())
       .then(data => setContacts(data))
       .catch(err => console.error("Error fetching footer data:", err));

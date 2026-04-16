@@ -18,6 +18,7 @@ import UpdateSkills from "./components/updateSkills";
 import ProtectedRoute from "./components/protectedRoute"; // 👈 import ProtectedRoute
 import UpdateHome from "./components/UpdateHome";
 import UpdateFooter from "./components/UpdateFooter";
+import API from "./api";
 
 function App() {
   useEffect(() => {

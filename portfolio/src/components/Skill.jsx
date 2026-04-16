@@ -1,12 +1,13 @@
 import "./skill.css";
 import { useState, useEffect } from "react";
+const API = import.meta.env.VITE_API_URL;
 
 function Skill() {
   const [categories, setCategories] = useState([]);
 
   // ✅ Load categories from DB
   useEffect(() => {
-    fetch("http://localhost:4000/admin/skills")
+    fetch(`${API}/admin/skills`) // API endpoint to fetch skill categories with their skills
       .then(res => res.json())
       .then(data => setCategories(data));
   }, []);

@@ -7,10 +7,11 @@ export default function UpdateSkills() {
   const [activeCategory, setActiveCategory] = useState(null);
   const [showDeleteCategory, setShowDeleteCategory] = useState(null);
   const [showDeleteSkill, setShowDeleteSkill] = useState({ catId: null, skill: null });
+  const API = import.meta.env.VITE_API_URL;
 
   // ✅ Load categories from DB
   useEffect(() => {
-    fetch("http://localhost:4000/admin/skills")
+    fetch(`${API}/admin/skills`)
       .then(res => res.json())
       .then(data => setCategories(data));
   }, []);
@@ -18,7 +19,7 @@ export default function UpdateSkills() {
   // ✅ Add new category
   const addCategory = async () => {
     if (newCategory.trim()) {
-      const res = await fetch("http://localhost:4000/admin/skills", {
+      const res = await fetch(`${API}/admin/skills`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: newCategory })
@@ -32,7 +33,7 @@ export default function UpdateSkills() {
   // ✅ Add skill to category
   const addSkill = async (catId) => {
     if (newSkill.trim()) {
-      const res = await fetch(`http://localhost:4000/admin/skills/${catId}`, {
+      const res = await fetch(`${API}/admin/skills/${catId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ skill: newSkill })
@@ -46,14 +47,14 @@ export default function UpdateSkills() {
 
   // ✅ Delete category
   const deleteCategory = async (catId) => {
-    await fetch(`http://localhost:4000/admin/skills/${catId}`, { method: "DELETE" });
+    await fetch(`${API}/admin/skills/${catId}`, { method: "DELETE" });
     setCategories(categories.filter(cat => cat._id !== catId));
     setShowDeleteCategory(null);
   };
 
   // ✅ Delete skill
   const deleteSkill = async (catId, skill) => {
-    const res = await fetch(`http://localhost:4000/admin/skills/${catId}/${skill}`, {
+    const res = await fetch(`${API}/admin/skills/${catId}/${skill}`, {
       method: "DELETE"
     });
     const data = await res.json();

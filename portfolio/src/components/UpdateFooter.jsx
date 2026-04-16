@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+const API = import.meta.env.VITE_API_URL;
 
 function UpdateFooter() {
   const [contacts, setContacts] = useState([]);
@@ -7,7 +8,7 @@ function UpdateFooter() {
 
   // ✅ GET contacts from backend
   useEffect(() => {
-    fetch("http://localhost:4000/api/footer")
+    fetch(`${API}/api/footer`)
       .then(res => res.json())
       .then(data => setContacts(data))
       .catch(err => console.error("Error fetching footer data:", err));
@@ -15,7 +16,7 @@ function UpdateFooter() {
 
   // ✅ Handle update
   const handleUpdate = (id, updated) => {
-    fetch(`http://localhost:4000/api/footer/${id}`, {
+    fetch(`${API}/api/footer/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updated)
@@ -29,7 +30,7 @@ function UpdateFooter() {
 
   // ✅ Handle delete
   const handleDelete = (id) => {
-    fetch(`http://localhost:4000/api/footer/${id}`, { method: "DELETE" })
+    fetch(`${API}/api/footer/${id}`, { method: "DELETE" })
       .then(() => setContacts(contacts.filter(c => c._id !== id)));
   };
 

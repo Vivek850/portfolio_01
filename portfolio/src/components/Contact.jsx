@@ -1,5 +1,6 @@
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useState } from "react";
+const API = import.meta.env.VITE_API_URL;
 
 function Contact() {
 
@@ -12,7 +13,7 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try{
-    await fetch("http://localhost:4000/contact", {
+    await fetch(`${API}/contact`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -28,7 +29,7 @@ function Contact() {
     <>
       <div className="box3  h-full">
         <div className="relative h-full w-full">
-          <div className="absolute inset-0 bg-[url('../public/img/contact.jpg')] bg-cover bg-center"></div>
+          <div className="absolute inset-0 bg-[url('../img/contact.jpg')] bg-cover bg-center"></div>
           <div className="absolute inset-0 bg-gradient-to-r from-white via-white to-transparent"></div>
 
           <div className="relative z-10 p-10">
@@ -59,7 +60,7 @@ function Contact() {
                   data-aos-duration="1200"
                 >
                   <img
-                    src="../../public/img/letsConnect.png"
+                    src="../img/letsConnect.png"
                     alt=""
                     className=" w-[40%] h-full object-cover float-right
                     xs:w-[160%] xs:h-auto xs:mb-0 xs:ml-0

@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import "./Projects.css";
+const API = import.meta.env.VITE_API_URL;
 
 function Projects() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/admin/projects")
+      fetch(`${API}/admin/projects`)
       .then(res => res.json())
       .then(data => setProjects(data));
   }, []);

@@ -1,5 +1,5 @@
 .box2{
-    @apply bg-[url('./../public/img/bgpjt.jpg!d')] bg-fixed bg-center  h-max w-full 
+    @apply bg-[url('../img/bgpjt.jpg!d')] bg-fixed bg-center  h-max w-full 
 }
 .project{
     @apply flex text-[48px] text-center p-4 text-white underline-offset-[10px] border-white justify-center items-center;

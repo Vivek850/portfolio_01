@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+const API = import.meta.env.VITE_API_URL;
 
 function UpdateHome() {
   const [formData, setFormData] = useState({
@@ -12,7 +13,7 @@ function UpdateHome() {
 
   // ✅ GET data from backend
   useEffect(() => {
-    fetch("http://localhost:4000/api/home")
+    fetch(`${API}/api/home`)
       .then(res => res.json())
       .then(data => {
         setFormData({
@@ -55,7 +56,7 @@ function UpdateHome() {
 
   // ✅ Update backend (PUT)
   const handleUpdate = () => {
-    fetch("http://localhost:5000/api/home", {
+    fetch(`${API}/api/home`, {
       method: "PUT", // या POST अगर तुम नया बनाना चाहो
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData)
