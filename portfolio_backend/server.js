@@ -4,11 +4,13 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
-
+const MONGO_URI = process.env.MONGO_URI; // env se read karega
+const SECRET_KEY = process.env.SECRET_KEY;
 
 const app = express();
 app.use(express.json());
 app.use(cors());
+
 
 // ✅ MongoDB connect
 mongoose.connect(MONGO_URI)
@@ -32,8 +34,6 @@ const MessageSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now }
 });
 const Message = mongoose.model('Message', MessageSchema);
-
-const SECRET_KEY = "mysecretkey";
 
 // ✅ Login Route
 app.post('/login', async (req, res) => {
